@@ -10,7 +10,7 @@ function App() {
   const calcularIMC = () => {
     if (peso && altura) {
       const pesoNumerico = parseFloat(peso.replace(',', '.'));
-      const alturaMetros = altura / 100;
+      const alturaMetros = parseFloat(altura) / 100; // Corrigido para converter para metros
       const imcCalculado = (pesoNumerico / (alturaMetros * alturaMetros)).toFixed(2);
       setIMC(imcCalculado);
       classificarIMC(imcCalculado);
